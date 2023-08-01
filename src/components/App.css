@@ -1,3 +1,14 @@
-html {
-  background: #f8f8f8;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.difficulty-btn-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.difficulty-btn {
+  padding: 12px 24px;
 }

@@ -10,6 +10,7 @@ export interface Card {
 
 export interface GameData {
   duration: number;
+  difficulty: Difficulty;
 }
 
 export type Difficulty = "easy" | "medium" | "hard";

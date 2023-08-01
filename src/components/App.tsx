@@ -1,5 +1,6 @@
 import "./App.css";
+import GameApp from "./GameApp";
 
 export default function App() {
-  return <div>Hello World</div>;
+  return <GameApp />;
 }

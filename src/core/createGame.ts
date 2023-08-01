@@ -3,7 +3,8 @@ import { shuffleArray } from "./utils";
 
 export function createGame(difficulty: Difficulty): Game {
   const cardContent = getCardContent();
-  const game: Game = { cards: [], data: { duration: 0 } };
+  const gameData = { duration: 0, difficulty };
+  const game: Game = { cards: [], data: gameData };
 
   switch (difficulty) {
     case "easy":
