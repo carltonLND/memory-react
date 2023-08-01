@@ -1,20 +1,27 @@
-import { Card, Difficulty } from "./gameTypes";
+import { Card, Difficulty, Game } from "./gameTypes";
 import { shuffleArray } from "./utils";
 
-export function createGame(difficulty: Difficulty): Card[] {
+export function createGame(difficulty: Difficulty): Game {
   const cardContent = getCardContent();
+  const game: Game = { cards: [], data: { duration: 0 } };
+
   switch (difficulty) {
     case "easy":
-      return shuffleArray(createCards(2, cardContent));
+      game.cards = shuffleArray(createCards(2, cardContent));
+      break;
     case "medium":
-      return shuffleArray(createCards(8, cardContent));
+      game.cards = shuffleArray(createCards(8, cardContent));
+      break;
     case "hard":
-      return shuffleArray(createCards(18, cardContent));
+      game.cards = shuffleArray(createCards(18, cardContent));
+      break;
     default: {
       const _value: never = difficulty;
       throw new Error(`Difficulty: ${_value} cannot be created!`);
     }
   }
+
+  return game;
 }
 
 function createPair(content: string): [Card, Card] {

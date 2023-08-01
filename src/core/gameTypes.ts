@@ -1,3 +1,8 @@
+export interface Game {
+  cards: Card[];
+  data: GameData;
+}
+
 export interface Card {
   content: string;
   revealed: boolean;
@@ -5,7 +10,6 @@ export interface Card {
 
 export interface GameData {
   duration: number;
-  lives: number;
 }
 
 export type Difficulty = "easy" | "medium" | "hard";
